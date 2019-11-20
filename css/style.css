@@ -1,0 +1,40 @@
+
+.color-link{
+  color: #35435d;
+}
+
+.colorlink-df{
+  color: #e2e4e6;
+}
+
+.card-bg-color{
+  background-color: #0079bf;
+}
+
+.navbar-bg{
+  background-color: #f8f9f9;
+}
+
+.md-color-default{
+  color:white;
+}
+/* Cor dos boards */
+.btn-orange{
+  background-color: #ffab4a;
+}
+
+.btn-green{
+  background-color: #61bd4f;
+}
+
+.btn-blue{
+  background-color: #0079bf;
+}
+
+.btn-red{
+  background-color: #eb5a46;
+}
+
+.btn-geral{
+  background-color: lawngreen;
+}

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <title>Login</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+
+<body class="text-center">
+
+  <!-- NavBar -->
+  <nav id="navbar-homescreem" class="navbar navbar-expand-lg navbar-light bg-light my-2 ml-2 mr-2">
+
+    <a class="navbar-brand" href="#">Trello</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu da NavBar -->
+    <!-- <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+        </div> -->
+    <!-- Menu da NavBar -->
+
+    <div class="collapse navbar-collapse justify-content-end ">
+      <a id="navbar-link-login"href="#login-container" class="color-link">Fazer Login</a>
+      <a id="navbar-link-register" class="btn btn-primary ml-2" href="#register-container" role="button">Cadastrar-se</a>
+    </div>
+  </nav>
+  <!-- NavBar -->
+
+  <div id="forms-container" class="container my-5">
+
+    <!-- Welcome Screen -->
+  <div id="welcome-screen" class="container">
+      <h3 class="h1 mb-3 font-weight-normal">Fazer Login no Trello</h3>
+      <a id="login-link-cadastrar" href="#register-container" class="mb-0 h5 color-link">ou crie uma conta</a>
+  </div>
+  <!-- Welcome Screen -->
+
+    <!-- Área de Login -->
+    <div id="login-container" class="container" style="display:none">
+
+      <div class="row">
+        <div class="col-12 text-center my-5">
+
+          <h3 class="h1 mb-3 font-weight-normal">Login</h3>
+          <p class="mb-0">Para acessar o trello, use sua conta. É rápido.</p>
+
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+
+          <!-- Formulário de Login -->
+          <form id="form-login" class="form-signin">
+
+            <div class="form-row justify-content-center">
+              <div class="form-group col-sm-6">
+
+                <label for="login-username" class="sr-only inp">Username</label>
+                <input type="text" class="form-control" id="login-username" placeholder="ursername">
+
+              </div>
+            </div>
+
+            <div class="form-row justify-content-center">
+              <div class="form-group col-sm-6">
+
+                <label for="login-password" class="sr-only">Password</label>
+                <input type="password" class="form-control" id="login-password" placeholder="password">
+
+              </div>
+            </div>
+
+            <div class="form-row justify-content-center">
+              <div class="col-sm-6">
+
+                <input id="login-btn" type="submit" class="btn btn-primary" value="Login">
+                <a id="login-link-register" href="#register-container" class="ml-2">Register</a>
+
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+      <div class="container">
+        <!-- Footer -->
+        <footer class="page-footer font-small blue pt-4">
+
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2019 - Denis Lopes
+          </div>
+          <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+      </div>
+
+    </div>
+
+    <!-- Área de Cadastro -->
+    <div id="register-container" class="container" style="display:none">
+
+      <!-- Titulo do Formulário de Cadastro-->
+      <div class="row">
+        <div class="col-12 text-center my-5">
+
+          <h1 class="h1 mb-3 font-weight-normal">Register</h1>
+          <p class="mb-0">Crie uma conta. É rápido</p>
+
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-sm-12 col-md-10 col-lg-8">
+
+          <!-- Formulário de Registro -->
+          <form id="form-register">
+
+            <div class="form-row justify-content-center">
+              <div class="form-group col-sm-6">
+
+                <label for="register-name" class="sr-only">Name</label>
+                <input type="text" class="form-control" id="register-name" placeholder="name" required>
+
+              </div>
+            </div>
+
+            <div class="form-row justify-content-center">
+              <div class="form-group col-sm-6">
+
+                <label for="register-username" class="sr-only">Username</label>
+                <input type="text" class="form-control" id="register-username" placeholder="username" required>
+
+              </div>
+            </div>
+
+            <div class="form-row justify-content-center">
+              <div class="form-group col-sm-6">
+
+                <label for="register-password" class="sr-only">Password</label>
+                <input type="password" class="form-control input_test" id="register-password" placeholder="password" required>
+
+              </div>
+            </div>
+
+            <div class="form-row justify-content-center">
+              <div class="form-group col-sm-6">
+
+                <label for="register-confirm-password" class="sr-only">Confirm Password</label>
+                <input type="password" class="form-control" id="register-confirm-password" placeholder="repeat password"
+                  required>
+
+              </div>
+            </div>
+
+            <div class="form-row justify-content-center">
+              <div class="col-sm-6">
+
+                <input id="register-btn" type="submit" class="btn btn-primary" value="Register">
+                <a id="register-link-login" href="#login-container" class="ml-2 btn btn-outline-danger">Cancel</a>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+      <div class="container">
+          <!-- Footer -->
+          <footer class="page-footer font-small blue pt-4">
+    
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 - Denis Lopes
+            </div>
+            <!-- Copyright -->
+    
+          </footer>
+          <!-- Footer -->
+        </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/popper.js/dist/popper.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+
+  <!-- Docs JS adicionais -->
+  <script src="register.js"></script>
+  <script src="login.js"></script>
+  <script src="ocult-screen.js"></script>
+</body>
+
+</html>

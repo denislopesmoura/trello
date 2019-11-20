@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+
+    <title>Home</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- NavBar da Home -->
+    <!-- <div id="navbar-home-div" class="container"> -->
+        <nav id="trello-navbar" class="navbar navbar-expand-lg navbar-light navbar-bg ml-2 mr-2">
+            <a class="navbar-brand" href="#home">Trello</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHome"
+                aria-controls="navbarHome" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Barra de Pesquisa -->
+            <div class="navbar">
+                
+                    <!-- <input class=" form-control mr-2" type="search" placeholder="Search"> -->
+                    <button class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#md-create-board">Create</button>
+                
+            </div>
+            <!-- Barra de Pesquisa -->
+        </nav>
+    <!-- </div> -->
+    <!-- NavBar da Home -->
+
+    <!-- Tela ERRO DE LOGIN -->
+    <div id="home-error-token" class="container" style="display:none">
+        <div class="row my-5 align-items-center">
+            <div class="col-12 text-center align-self-center">
+                <h1 class="text-danger">Acesso Inválido</h1>
+                <p>Retorne a tela de login e acesse o site utilizando uma conta.</p>
+                <br>
+                <a href="login-screen.html" class="btn btn-outline-danger"> Retornar a tela de login</a>
+            </div>
+        </div>
+    </div>
+    <!-- Tela ERRO DE LOGIN -->
+
+    <!-- Tela Home  -->
+    <div id="homescreen" class="container" onload="teste()">
+        <div class="row my-5">
+            <div class="col-12 text-center align-self-center">
+                <h1>Bem vindo a sua tela inicial</h1>
+                <p>Nesta página você poderá criar e gerenciar seus boards.</p>
+                <br>
+            </div>
+
+            <!-- Boards -->
+            <div id="board-div" class="container-fluid my-5">
+                <div id="board-row" class="row mb-5">
+                    <div class="col-12 text-left mb-3 mr-3">
+                        <h5>Quadros Pessoais</h5>
+                    </div>
+                    <!-- Modelo de board a ser gerado -->
+                    <!-- <div id="teste-card" class=" col-3 card btn-orange mb-3 mr-3"> -->
+                        <!-- Conteudo do Board -->
+                        <!-- <div class="card-body"> -->
+                            <!-- titulo do board -->
+
+                            <!-- <h6 class="card-title text-left"><b>Titulo do board</b></h6> -->
+
+                            <!-- titulo do board -->
+
+                            <!-- acões do board -->
+                            <!-- <div class="text-left">
+                                <a class="btn btn-sm btn-link" href="#">Rename</a>
+                                <a class="btn btn-sm btn-link" onclick="deleteBoard()">Excluir</a>
+                            </div> -->
+                            <!-- acões do board -->
+                        <!-- </div> -->
+                        <!-- Conteudo do Board -->
+                    <!-- </div> -->
+                    <!-- Modelo de board a ser gerado -->
+                </div>
+            </div>
+            <!-- Boards do Trello -->
+        </div>
+    </div>
+    <!-- Tela Home  -->
+
+    <!-- Modal: Criar Board -->
+    <div class="modal fade" id="md-create-board" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <!-- Modal header -->
+                <div id="modal-header" class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Criar Novo Quadro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal header -->
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Form Create Board -->
+                    <form id="modalCreateForm" class="form-signin">
+                        <div class="form-row">
+                            <div class="form-group col-6">
+
+                                <label for="modal-board-name" class="sr-only inp">Username</label>
+                                <input type="text" id="modal-board-name" class="form-control"
+                                    placeholder="Adicionar título do quadro" required>
+
+                            </div>
+                            <div class="form-group col-12">
+                                <a id="color-red" class="btn btn-orange" role="button" onclick="setColorOrange()"></a>
+                                <a class="btn btn-green ml-2" role="button" onclick="setColorGreen()"></a>
+                                <a class="btn btn-blue ml-2" role="button" onclick="setColorBlue()"></a>
+                                <a class="btn btn-red ml-2" role="button" onclick="setColorRed()"></a>
+                            </div>
+                            <div class="form-group col-6">
+                                <input type="submit" id="modal-btn-create-quadro" class="btn btn-primary"
+                                    value="Criar Quadro">
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Form Create Board -->
+                </div>
+                <!-- Modal Body -->
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Criar Board -->
+
+    <!-- Modal: Renomear Board -->
+    <div class="modal fade" id="mdRenameBoard" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Modal header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Quadro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal header -->
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Form Create Board -->
+                    <form method="POST" id="modalRenameForm" class="form-signin">
+                        <div class="form-row">
+                            <div class="form-group col-6">
+                                <label for="md-board-name" class="sr-only inp">rename</label>
+                                <input type="text" id="renameBoard" class="form-control"
+                                    placeholder="Adicionar título do quadro" required>
+                            </div>
+                            <div class="form-group col-12">
+                                <a class="btn btn-orange" role="button" onclick="setColorOrange()"></a>
+                                <a class="btn btn-green ml-2" role="button" onclick="setColorGreen()"></a>
+                                <a class="btn btn-blue ml-2" role="button" onclick="setColorBlue()"></a>
+                                <a class="btn btn-red ml-2" role="button" onclick="setColorRed()"></a>
+                            </div>
+                            <div class="form-group col-6">
+                                <input type="submit" id="modal-btn-create-quadro" class="btn btn-primary"
+                                    value="Rename">
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Form Create Board -->
+                </div>
+                <!-- Modal Body -->
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Renomear Board -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script> -->
+
+    <!-- Others JavaScript -->
+    <script src="homescreen.js"></script>
+    <!-- <script src="boards.js"></script> -->
+
+</body>
+
+</html>
